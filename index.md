@@ -61,28 +61,3 @@ __Ручные задачи:__
 * [Ручные задачи к семинару 1](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_1/tasks_1.pdf)
 * [Ручные задачи к семинару 2](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_2/tasks_2.pdf)
 * [Ручные задачи к семинару 3](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_3/tasks_3.pdf)
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Посиделка 10: Тексты! Эмбединги! Снова!
-
-* [Скачать семинар полностью](https://github.com/FUlyankin/neural_nets_econ/raw/master/2019/sem_10_text/sem_10.zip)
-
-### Посиделка 9: Тексты! Эмбединги!
-
-* [Скачать семинар полностью](https://github.com/FUlyankin/neural_nets_econ/raw/master/2019/sem_9_text/sem_9.zip)
-
-
-### Посиделка 8: Автокодировщики и GAN
-
-* [Скачать семинар полностью](https://github.com/FUlyankin/neural_nets_econ/raw/master/2019/sem_8_pic/sem_8.zip)
