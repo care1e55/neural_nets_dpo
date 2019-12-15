@@ -1,98 +1,93 @@
-# Введение в нейросетки, сезон 2019
-
-## Интересные ссылки
-
-* [Учим нейросеть](https://playground.tensorflow.org) не отходя от браузера!
-* [Шпаргалка по Keras](https://github.com/FUlyankin/neural_networks/blob/master/HSE_2018/sem_2/Keras_Cheat_Sheet_Python.pdf)
-* [Нейросетки от Николенко](https://yadi.sk/i/EIL8nVcLCzR80g)
-* [Чтиво для души о том, когда нас захватят роботы](https://yadi.sk/i/zYNv-pLMYLZXfQ)
-* [Нейросетки от Гудфедлоу](https://yadi.sk/i/NZIdukL2tpufBA)
+# Более-менее Актуальные ссылки
 
 
-## Перечень домашек
+__Базовое:__
 
-#### После 1 семинара:
+* [Тетрадка с введением в Keras (регрессия)](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_1/sem1_keras_intro.ipynb)
+* [Старая тетрадка с введением (классификация)](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/Keras_classification_intro.ipynb)
 
-* [Задание 1.1](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/Homework/hw1_part1_gradient.ipynb) на 50 оттенков градиентного спуска.
-* [Задание 1.2](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/Homework/hw_1_part2_keras.ipynb) на Keras.
+* [Тетрадка с экспериментами на градиентный спуск](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_2/Keras_SGD_experiments.ipynb) __В конце задание на перебор скорости по циклу.__
+* [Тетрадка с эвристиками в Keras](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_5/batchnorm_init_skip_solve.ipynb)
 
-#### После 2 семинара:
-
-* [Домашка с реализацией свой сетки в numpy](https://github.com/FUlyankin/neural_nets_hse_dpo/raw/master/sems_2019_spring/sem_2/hw2_own_neural_network.zip)
-
-#### После 3 семинара:
-
-* [Тетрадка с семинаром и домашкой](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_3/2.%20tensorflow_task%20.ipynb)
-
-#### После 3 семинара:
-
-* [Домашка по CNN и CIFAR-10](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_4/3.%20Keras_CNN.ipynb)
-
-#### После картинок:
-
-#### Большая домашка по текстам:
-
-* [Блокнот с заданием](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/HW4_2.ipynb)
-* [Архив с данными](https://yadi.sk/d/uuyDA2hOdC9VHA)
+* [Тетрадка с введением в Tensorflow 2.0](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_4/tensorflow2.ipynb) с пары и [моё домашнее решение](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_4/tensorflow2_solve.ipynb)
 
 
-## Логи семинаров
-
-### Семинар 10
-
-* [Презентация про автопереводы](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/nn_slides_6.pdf)
-* [Блокнот с автопереводчиком](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/autotranslate.ipynb)
+* [Большая домашка: пытаемся предсказать продажи](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_1/HW1.ipynb) а также [датасет](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_1/walmart.csv) к ней.
+* [Домашка на градиентные спуски с курсеры/ШАД:](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_2/HW2_gradient.ipynb)
 
 
-### Семинар 9
+__Картинки:__
 
-* [Презентация про RNN](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/nn_slides_5.pdf)
-* [Блокнот про RNN](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/9.1-understanding-recurrent-neural-networks.ipynb)
-* [Блокнот с генерацией Онегина](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/LSTM_onegin.ipynb)
-* [Текст Онегина](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/onegin.txt)
-* [Блокнот с transfer learning для текстов](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/transfer%20learning.ipynb)
+* [Первый заход на картинки, говорим про свёртку](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_5/1.%20Convolution.ipynb)
+* [Тетрадка со свёрткой (решение)](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_6_pic/our_first_cnn_solve.ipynb)
+* [Тетрадка с зоопарком моделей (решение)](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_6_pic/Neural_nets_ZOO_solve.ipynb)
+
+* [Transfer learning на хот-догах](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_7_pic/transfer_learning_images.ipynb)
+* [Решение тетрадки с переносом стиля с семинара](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_7_pic/neural-style-transfer_solve.ipynb)
 
 
-### Семинар 8
 
-* [Дамп википедии.](https://yadi.sk/d/Ddcl3nAiDO2CKQ)
-* [w2v, которую мы предобучили на википедии](https://yadi.sk/d/XHQLpVZSc88aUw).
+* [Большая домашка на картинки: коты vs собаки](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_7_pic/HW_cats.ipynb) про картинки с котами и собаками.
 
-* [Презентация про тексты и эмбединги](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/nn_slides_4.pdf)
+
+__Тексты:__
+
+* [Учим w2v на семинаре](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_9_text/1.%20Train_w2v.ipynb) и [его решение](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_9_text/1.%20Train_w2v_solve.ipynb)
 * [Блокнот с w2v по википедии](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.1%20wikipedia_w2v.ipynb)
 * [Блокнот с парсером Twitter](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.2%20Twitter%20parser.ipynb)
 * [Блокнот с сентимент-анализом Twitter](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.3%20LSTM_sentiment.ipynb)
+* [Вместе собираем большую сетку на предобученных w2v в tf 2.0](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_10_text/workshop/my_old_worshop.ipynb)
+
 
 * [Трансфер-лернинг эмбедингов](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.5%20ebeddings_transfer%20learning.ipynb)
+
+
+
+
+* [RNN и генерацией Онегина](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/LSTM_onegin.ipynb)
+
+
+
+* [Большая домашка по текстам](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/HW4_2.ipynb)
 * [Задание на эмбединги](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/task.ipynb)  и [его решение](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/task_solve.ipynb)
 
 
-### Семинар 7
+__Ещё чего:__
 
-### Семинар 6
-
-### Семинар 5
-
-### Семинар 4
-* [Презентация про свёрточные сетки](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_4/nn_slides_4.pdf)
-* [Блокнот про свёртку](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_4/1.%20Convolution.ipynb)
-* [Блокнот про CNN по MNIST](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_4/2.%20CNN_MNIST_solve.ipynb)
-
-
-### Семинар 3
-* [Презентация с эвристиками](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_3/nn_slides_2.pdf)
-* [Тетрадка с семинаром и домашкой](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_3/2.%20tensorflow_task%20.ipynb)
+* [Блокнот с автопереводчиком](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/autotranslate.ipynb)
+* [GAN](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_8_pic/GAN_v2_solve.ipynb) В конце задание переделать модель в CGAN.
 
 
 
-### Семинар 2
-* [Задания к семинару](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_2/NN_sem.pdf)
-* [Старое решенеи семинара,](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_2/NN_sem_solution.pdf) ночью отсканирую новое
-* [Кусочек Воронцова](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_2/Нейросети_кусочек_Вороцова.pdf)
-* [Лекция Воронцова по нейронкам](https://www.youtube.com/watch?v=WjwA5DqxL-c)
 
 
-### Семинар 1
-* [Презентация](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/nn_slides_1.pdf)
-* [Тетрадка](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/Keras_classification_intro.ipynb) с нашей первой нейросеткой в Keras! Данные: [признаки](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/X_cat.csv) и [ответы.](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/y_cat.csv) Данные позаимствованы с [соревнования на Kaggle.](https://www.kaggle.com/c/shelter-animal-outcomes)
-* [Блокнот](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_1/original_cats/cats_data_prep.ipynb) с предобработкой данных, на который мы НЕ смотрели на паре, но который может быть полезен.
+__Ручные задачи:__
+
+* [Ручные задачи к семинару 1](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_1/tasks_1.pdf)
+* [Ручные задачи к семинару 2](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_2/tasks_2.pdf)
+* [Ручные задачи к семинару 3](https://github.com/FUlyankin/neural_nets_econ/blob/master/2019/sem_3/tasks_3.pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Посиделка 10: Тексты! Эмбединги! Снова!
+
+* [Скачать семинар полностью](https://github.com/FUlyankin/neural_nets_econ/raw/master/2019/sem_10_text/sem_10.zip)
+
+### Посиделка 9: Тексты! Эмбединги!
+
+* [Скачать семинар полностью](https://github.com/FUlyankin/neural_nets_econ/raw/master/2019/sem_9_text/sem_9.zip)
+
+
+### Посиделка 8: Автокодировщики и GAN
+
+* [Скачать семинар полностью](https://github.com/FUlyankin/neural_nets_econ/raw/master/2019/sem_8_pic/sem_8.zip)
