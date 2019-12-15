@@ -37,16 +37,7 @@ __Тексты:__
 * [Блокнот с парсером Twitter](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.2%20Twitter%20parser.ipynb)
 * [Блокнот с сентимент-анализом Twitter](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.3%20LSTM_sentiment.ipynb)
 * [Вместе собираем большую сетку на предобученных w2v в tf 2.0](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_10_text/workshop/my_old_worshop.ipynb)
-
-
 * [Трансфер-лернинг эмбедингов](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/8.5%20ebeddings_transfer%20learning.ipynb)
-
-
-
-
-* [RNN и генерацией Онегина](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/LSTM_onegin.ipynb)
-
-
 
 * [Большая домашка по текстам](https://github.com/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/HW4_2.ipynb)
 * [Задание на эмбединги](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/task.ipynb)  и [его решение](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_8/task_solve.ipynb)
@@ -54,9 +45,13 @@ __Тексты:__
 
 __Ещё чего:__
 
-* [Блокнот с автопереводчиком](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/autotranslate.ipynb)
-* [GAN](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_8_pic/GAN_v2_solve.ipynb) В конце задание переделать модель в CGAN.
+* [Рекурентные сетки](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2020/1.%20rnn_time_series.ipynb)
+* [RNN и генерацией Онегина](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_9/LSTM_onegin.ipynb)
 
+* [Блокнот с автопереводчиком](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2019_spring/sem_10/autotranslate.ipynb)
+* [Автокодировщики](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2020/4.%20%D0%90%D0%B2%D1%82%D0%BE%D1%8D%D0%BD%D0%BA%D0%BE%D0%B4%D0%B5%D1%80%D1%8B%20MNIST.ipynb)
+* [GAN](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_econ/blob/master/2019/sem_8_pic/GAN_v2_solve.ipynb) В конце задание переделать модель в CGAN.
+* [Немного про RL и pong](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_hse_dpo/blob/master/sems_2020/1.%20RL.ipynb)
 
 
 
