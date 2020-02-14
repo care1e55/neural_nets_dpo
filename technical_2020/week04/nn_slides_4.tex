@@ -2,7 +2,7 @@
 \documentclass[notes,12pt, aspectratio=169]{beamer}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
-\usepackage{minted}
+%\usepackage{minted}
 
 \usepackage[english, russian]{babel} % выбор языка для документа
 \usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
@@ -149,8 +149,8 @@
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\E}{E}
 
-\title[]{\textcolor{blue}{Нейронки для экономистов и вообще}}
-\author{Ульянкин Филипп}
+\title[]{\textcolor{blue}{Глубокое обучение и вообще}}
+\author{Зарманбетов Ахмед}
 \date{\today}
 
 \usepackage{ulem}
@@ -190,7 +190,7 @@
 	\item  Какими бывают функции активации 
 	\item  Инициализация весов в нейросетках 
 	\item  Нормализация по батчам 
-	\item  Dopout 
+	\item  Dropout 
 	\item  Другие эвристики, используемые при обучении нейронных сетей 
 \end{wideitemize} 
 \end{frame}
@@ -250,7 +250,7 @@
 
 \begin{itemize}
 {\color{red} 
-\item Cпособствует затухание градиента
+\item Cпособствует затуханию градиента
 
 \item Не центрирована относительно нуля
 
@@ -387,7 +387,7 @@
 \end{center}
 \begin{wideitemize}
 	\item  Что будет, если инициализировать веса нулями?  \pause 
-	\item  ${\color{green} \sigma_1 }$ и ${\color{red} \sigma_2 }$  будут обновляться одинаково
+	\item  ${\color{red} \sigma_2 }$ и ${\color{green} \sigma_3 }$  будут обновляться одинаково
 \end{wideitemize}
 \end{frame}
 
@@ -442,13 +442,13 @@
 		\Var(h_i) = \Var(\sum_{i=1}^{n_{in}} w_i x_i) =  \sum_{i=1}^{n_{in}} \Var(w_i x_i) = \\ 
 		= \sum_{i=1}^{n_{in}} [\E(x_i)]^2 \cdot \Var(w_i) + [\E(w_i)]^2 \cdot \Var(x_i)  + \Var(x_i) \cdot \Var(w_i)] = \only<3->{\\  =  \sum_{i=1}^{n_{in}}  \Var(x_i) \cdot \Var(w_i)  } \only<4>{ =  \Var(x)  \color{green} \cdot [n_{in} \cdot \Var(w)]} \only<5->{ =  \Var(x)  \color{green} \cdot \underbrace{[n_{in} \cdot \Var(w)]}_{= 1}}
 	\end{multline*}
+\only<2-3>{
 	
 \begin{wideitemize}
-	\only<2-3>{
-	\item Если функция активации симметричная, тогда $E(x_i) = 0$. Будем инициализировать веса с нулевым средним, тогда $E(w_i) = 0$.}
+	\item Если функция активации симметричная, тогда $E(x_i) = 0$. Будем инициализировать веса с нулевым средним, тогда $E(w_i) = 0$.
 	\only<4>{ 
 	\item  Хотим, чтобы зелёная штука была равна единице, тогда у потока будет всегда постоянная дисперсия, совпадающая с $\Var(x)$.}
-\end{wideitemize}
+\end{wideitemize}}
 \end{frame}
 
 
@@ -470,12 +470,12 @@
 \begin{frame}{Немного лучше}
 	Пущай 
 	
-	$$ w_i \sim U \left[ - \frac{\sqrt{6}}{\sqrt{n_{in}}};  \frac{\sqrt{6}}{\sqrt{n_{in}}}  \right],$$
+	$$ w_i \sim U \left[ - \frac{\sqrt{3}}{\sqrt{n_{in}}};  \frac{\sqrt{3}}{\sqrt{n_{in}}}  \right],$$
 	
 	тогда 
 	
 	$$
-	\Var(w_i) = \frac{1}{12} \cdot \left( \frac{\sqrt{6}}{\sqrt{n_{in}}} + \frac{\sqrt{6}}{\sqrt{n_{in}}} \right)^2 = \frac{1}{n_{in}} \Rightarrow Var(h_i) = 1 \pause 
+	\Var(w_i) = \frac{1}{12} \cdot \left( \frac{\sqrt{3}}{\sqrt{n_{in}}} + \frac{\sqrt{3}}{\sqrt{n_{in}}} \right)^2 = \frac{1}{n_{in}} \Rightarrow Var(h_i) = 1 \pause 
 	$$
 	
 	\vfill 
@@ -625,7 +625,7 @@
 
 \begin{align*} 
 \mu_h =  \alpha \cdot \bar x_{batch}  + (1 - \alpha) \cdot \mu_h \\ 
-\sigma_h^2 =  \alpha \cdot \hat s^2_{batch}  + (1 - \alpha) \cdot \sigma^2_h \\ 
+\sigma_h =  \alpha \cdot \hat s_{batch}  + (1 - \alpha) \cdot \sigma_h \\ 
 \end{align*}
 
 \item Коэффициенты $\beta$ и $\gamma$ оцениваются в ходе обратного распространения ошибки
@@ -670,10 +670,13 @@
 
 \begin{frame}{Трюки}
 \begin{wideitemize}
-	\item  С батч-номрализацией нужно уменьшить силу Dropout и регуляризацию 
+	\item  С батч-нормализацией нужно уменьшить силу Dropout и регуляризацию 
 	
 	\item  Не забывайте перемешивать обучающую выборку перед каждой новой эпохой, чтобы батчи были разнообразными 
 \end{wideitemize}
+\vspace{3cm} %
+\tiny
+{\color{blue} \url{http://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Understanding_the_Disharmony_Between_Dropout_and_Batch_Normalization_by_Variance_CVPR_2019_paper.pdf}}
 \end{frame}
 
 
@@ -683,7 +686,12 @@
 	\end{center}
 \end{transitionframe}
 
-
+{
+	\usebackgroundtemplate{ 
+		\includegraphics[width=\paperwidth]{overfitting.png}}
+	\begin{frame}
+\end{frame}
+}
 
 \begin{frame}{Dropout}
 \begin{wideitemize}	
@@ -745,6 +753,11 @@
 
 \item  Dropout эквивалентен обучению $2^n$ сетей
 
+\only<1>{
+\begin{center}
+	\includegraphics[width=0.5\paperwidth]{dropout2.png}
+\end{center} }
+
 \only<2>{\alert{ \item  Что делать на стадии тестирования?}}
 
  \only<3->{
@@ -757,6 +770,8 @@ o = p \cdot f(X \cdot W + b)
 $$}
 \end{wideitemize}
 \end{frame}
+
+
 
 
 \begin{frame}{Обратный Dropout}
@@ -825,7 +840,7 @@ $$}
 \begin{frame}{Прореживание сети}
 \begin{wideitemize}
 \item Начать с большого количество нейронов и удалять незначимые по какому-нибудь критерию 
-\item \alert{Пример:} обнуляем вес, смотрим как сильно упала ошибка, сортируем все вязи по этому критерию, удаляем $N$ наименее значимых
+\item \alert{Пример:} обнуляем вес, смотрим как сильно упала ошибка, сортируем все cвязи по этому критерию, удаляем $N$ наименее значимых
 \item После прореживания снова запускаем backprop
 \item Если качество модели сильно упала, надо вернуть последние удалённые связи 
 \end{wideitemize}
@@ -846,6 +861,67 @@ $$}
 \end{wideitemize}
 \end{frame}
 
+\begin{frame}{Early stopping}
+\begin{center}
+	\includegraphics[width=0.5\paperwidth]{early_stopping.png}
+\end{center}
+\begin{wideitemize}
+	\item Будем останавливать обучение, когда качество на валидации начинает падать
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}{Регуляризация}
+\begin{wideitemize}
+	\item $L_2$: приплюсовываем к функции потерь $\lambda \cdot \sum w_i^2$
+	
+	\item $L_1$: приплюсовываем к функции потерь $\lambda \cdot \sum |w_i|$
+	
+	\item Можно регуляризовать не всю сетку, а отдельный нейрон или слой 
+	
+	\item Не даёт нейрону сфокусироваться на слишком выделяющемся входе	
+\end{wideitemize}
+\end{frame}
+
+
+\begin{frame}{Регуляризация}
+\begin{wideitemize}
+\item В keras можно добавить для каждого слоя на три вида связей: 
+
+\item \textbf{kernel\_regulirizer} - на матрицу весов слоя;
+
+\item \textbf{bias\_regulirizer} - на вектор свободных членов;
+
+\item \textbf{kernel\_regulirizer} - на вектор выходов.
+
+\item \textbf{Делается примерно так:}
+
+\mbox{ }
+
+\pgr{\hspace{50pt}} model.add(Dense(256, inpit\_dim = 32, \\
+\pgr{\hspace{80pt}}  kernel\_regulirizer = regulizers.l1(0.001), \\
+\pgr{\hspace{80pt}} bias\_regulirizer = regulizers.l2(0.1), \\
+\pgr{\hspace{80pt}} activity\_regulirizer = regulizers.l2(0.01))) 
+\end{wideitemize}
+\end{frame}
+
+
+\begin{frame}{Взаимосвязи}
+\begin{wideitemize}
+\item  На практике обычно используют Dropout. Действия всех этих регуляризаторов оказывается схожим: 
+
+\item Например, в [1] написано: \\ \mbox{   } \\
+
+\texttt{«We show that the dropout regularizer is first-order equivalent to an L2 regularizer applied after scaling the features by an estimate of the inverse diagonal Fisher information matrix»}
+
+\item  У Гудфеллоу в Глубоком обучении на стр. 218 можно найти, что рання остановка для линейных моделей эквивалентна $l_2$ регуляризации с MSE, обучаемой SGD.
+
+\end{wideitemize}
+
+\vfill %
+\footnotesize 
+\color{blue} [1] \url{https://arxiv.org/abs/1307.1493} 
+\end{frame}
+
 \begin{frame}{Ещё обсудим}
 \begin{wideitemize}
 	\item Скип-конекшены 
@@ -853,97 +929,13 @@ $$}
 	\item Более забубуенистые архитектуры 
 \end{wideitemize}
 \end{frame}
-\end{document}
-
 
 %%%%%%%  В презу с эвристиками ! 
 
-%{
-%	\usebackgroundtemplate{ 
-%		\includegraphics[width=\paperwidth]{overfitting.png}}
-%	\begin{frame}
-%\end{frame}
-%}
-%
-%
-%\begin{frame}{Early stopping}
-%\begin{center}
-%\includegraphics[width=0.5\paperwidth]{early_stopping.png}
-%\end{center}
-%\begin{wideitemize}
-%\item Будем останавливать обучение, когда качество на валидации начинает падать
-%\end{wideitemize}
-%\end{frame}
-%
-%
-%\begin{frame}{Регуляризация}
-%\begin{wideitemize}
-%\item $L_2$: приплюсовываем к функции потерь $\lambda \cdot \sum w_i^2$
-%
-%\item $L_1$: приплюсовываем к функции потерь $\lambda \cdot \sum |w_i|$
-%
-%\item Можно регуляризовать не всю сетку, а отдельный нейрон или слой 
-%
-%\item Не даёт нейрону сфокусироваться на слишком выделяющемся входе	
-%\end{wideitemize}
-%\end{frame}
-%
-%
-%\begin{frame}{Регуляризация}
-%\begin{wideitemize}
-%\item В keras можно добавить для каждого слоя на три вида связей: 
-%
-%\item \textbf{kernel\_regulirizer} - на матрицу весов слоя;
-%
-%\item \textbf{bias\_regulirizer} - на вектор свободных членов;
-%
-%\item \textbf{kernel\_regulirizer} - на вектор выходов.
-%
-%\item \textbf{Делается примерно так:}
-%
-%\mbox{ }
-%
-%\pgr{\hspace{50pt}} model.add(Dense(256, inpit\_dim = 32, \\
-%\pgr{\hspace{80pt}}  kernel\_regulirizer = regulizers.l1(0.001), \\
-%\pgr{\hspace{80pt}} bias\_regulirizer = regulizers.l2(0.1), \\
-%\pgr{\hspace{80pt}} activity\_regulirizer = regulizers.l2(0.01))) 
-%\end{wideitemize}
-%\end{frame}
-%
-%
-%\begin{frame}{Dropout}
-%\begin{center}
-%\includegraphics[width=0.5\paperwidth]{dropout2.png}
-%\end{center}
-%\begin{wideitemize}
-%\item Предотвращает коадоптацию нейронов и делает их более устойчивыми к случайным возмущениям 
-%
-%\item На самом деле эквивалентен обучению $2^n$ моделей 
-%
-%\end{wideitemize}
-%\end{frame}
-%
-%
-%\begin{frame}{Взаимосвязи}
-%\begin{wideitemize}
-%\item  На практике обычно используют Dropout. Действия всех этих регуляризаторов оказывается схожим: 
-%
-%\item Например, в [1] написано: \\ \mbox{   } \\
-%
-%\texttt{«We show that the dropout regularizer is first-order equivalent to an L2 regularizer applied after scaling the features by an estimate of the inverse diagonal Fisher information matrix»}
-%
-%\item  У Гудфеллоу в Глубоком обучении на стр. 218 можно найти, что рання остановка для линейных моделей эквивалентна $l_2$ регуляризации с MSE, обучаемой SGD.
-%
-%\end{wideitemize}
-%
-%\vfill %
-%\footnotesize 
-%\color{blue} [1] \url{https://arxiv.org/abs/1307.1493} 
-%\end{frame}
-%
-%
 %\begin{frame}{Размеры сеток и переобучение}
 %\begin{center}
 %\includegraphics[width=0.7\paperwidth]{big_base_small_fit.png}
 %\end{center}
 %\end{frame}
+
+\end{document}
