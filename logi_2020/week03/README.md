@@ -3,9 +3,9 @@
 
 ### Материалы с семинара:
 
-* Скачать папку полностью
+* [Скачать папку полностью](http://localhost:8888/tree/Documents/neural_nets_dpo/logi_2020/week03)
 * Дорешали ручные задачки на обратное распространение ошибки
-* Вводились в Tensorflow
+* [Вводились в Tensorflow](https://nbviewer.jupyter.org/github/FUlyankin/neural_nets_dpo/blob/master/logi_2020/week03/tensorflow2_solve.ipynb)
 * Наращивали и разряжали нейронки (Влад)
 
 
