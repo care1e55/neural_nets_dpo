@@ -7,9 +7,19 @@
 * Курс сделан на Tensorflow 2.0
 * [Сервис для скачки](https://minhaskamal.github.io/DownGit/#/home) отдельных папок из репозитория
 
-# Идеология и призыв
+## Список того, что мы считаем домашками: 
 
-Тут появится идеология курса и призыв.
+* 
+* 
+* 
+* 
+* 
+
+По просьбам: 
+
+* 
+
+
 
 ## Большой план маленьких побед
 
@@ -18,16 +28,18 @@
 - [__week03__](./logi_2020/week03) Основы Tensorflow.
 - [__week04__](./logi_2020/week04) Нормализация по батчам. Инициализация. Эвристики для обучения сеток.
 - [__week05__](./logi_2020/week05) Свёрточные нейронные сетки.
-- [__week06__](./logi_2020/week06) Inception. Resnet. Transfer learning. Metric Learning. Про распознавание лиц.
-- [__week07__](./logi_2020/week07) Что видят свёрточные сетки. Перенос стиля. Внимание.
+- [__week06__](./logi_2020/week06) Inception. Resnet. Transfer learning.
+- [__week07__](./logi_2020/week07) Что видят свёрточные сетки. Перенос стиля.
 - [__week08__](./logi_2020/week08) Автокодировщики, вариационные автокодировщики.
 - [__week09__](./logi_2020/week09) Генеративные нейронные сетки.
 - [__week10__](./logi_2020/week10) Введение в NLP, word2vec, эмбединги
 - [__week11__](./logi_2020/week11) Рекурентные неросетки, LSTM, GRU.
 - [__week12__](./logi_2020/week12) Свёрточные сетки для NLP.
-- [__week13__](./logi_2020/week13) Fasttext, ELMO. Transformer models.  BERT.
+- [__week13__](./logi_2020/week13) Fasttext, ELMO. Transformer models.  BERT. Внимание.
 - [__week14__](./logi_2020/week14) Seq2Seq модели. Автопереводы. Немного про байесовские нейронные сети.
 
+Ещё идеи: 
+  -  Metric Learning. Про распознавание лиц.
 
 ## Contributors & course staff
 
