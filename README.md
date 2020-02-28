@@ -9,10 +9,10 @@
 
 ## Список того, что мы считаем домашками: 
 
-* 
-* 
-* 
-* 
+*  [Первая нейронка](https://github.com/FUlyankin/neural_nets_dpo/blob/master/logi_2020/week01/sem1_my_first_neural_network.ipynb) 
+* [50 оттенков градиентного спуска](https://github.com/FUlyankin/neural_nets_dpo/blob/master/logi_2020/week02/HW2_gradient.ipynb)
+* [Циклическая скорость обучения](https://github.com/FUlyankin/neural_nets_dpo/blob/master/logi_2020/week02/Keras_SGD_experiments_semisolve.ipynb) 
+* [Стрельба по ногам в keras](https://github.com/FUlyankin/neural_nets_dpo/blob/master/logi_2020/week05/3.%20foot_shoot_part1.ipynb)
 * 
 
 По просьбам: 
