@@ -1,0 +1,362 @@
+%!TEX TS-program = xelatex
+\documentclass[notes,12pt, aspectratio=169]{beamer}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}  % пакеты для математики
+\usepackage{minted}
+
+\usepackage[english, russian]{babel} % выбор языка для документа
+\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+\usepackage[X2,T2A]{fontenc}        % кодировка
+
+\usepackage{fontspec}         % пакет для подгрузки шрифтов
+\setmainfont{Helvetica}  % задаёт основной шрифт документа
+
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Helvetica}
+\newfontfamily{\cyrillicfont}{Helvetica}
+\newfontfamily{\cyrillicfontsf}{Helvetica}
+
+\usepackage{unicode-math}     % пакет для установки математического шрифта
+% \setmathfont{Neo Euler} % шрифт для математики
+
+\usepackage{polyglossia}      % Пакет, который позволяет подгружать русские буквы
+\setdefaultlanguage{russian}  % Основной язык документа
+\setotherlanguage{english}    % Второстепенный язык документа
+
+% Шрифт для кода
+\setmonofont[Scale=0.85]{Monaco}
+\usepackage{verbments}
+
+\usepackage{pgfpages}
+% These slides also contain speaker notes. You can print just the slides,
+% just the notes, or both, depending on the setting below. Comment out the want
+% you want.
+%\setbeameroption{hide notes} % Only slide
+%\setbeameroption{show only notes} % Only notes
+%\setbeameroption{show notes on second screen=right} % Both
+
+\usepackage{array}
+
+\usepackage{tikz}
+\usepackage{verbatim}
+\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}
+\usetikzlibrary{positioning}
+\usetikzlibrary{snakes}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{matrix,shapes,arrows,fit,tikzmark}
+
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{multimedia}
+\usepackage{multirow}
+\usepackage{dcolumn}
+\usepackage{bbm}
+\newcolumntype{d}[0]{D{.}{.}{5}}
+
+\usepackage{changepage}
+\usepackage{appendixnumberbeamer}
+\newcommand{\beginbackup}{
+   \newcounter{framenumbervorappendix}
+   \setcounter{framenumbervorappendix}{\value{framenumber}}
+   \setbeamertemplate{footline}
+   {
+     \leavevmode%
+     \hline
+     box{%
+       \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{footlinecolor}%
+%         \insertframenumber  \hspace*{2ex} 
+       \end{beamercolorbox}}%
+     \vskip0pt%
+   }
+ }
+\newcommand{\backupend}{
+   \addtocounter{framenumbervorappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumbervorappendix}} 
+}
+
+% для имитации питоновского синтаксиса 
+\newcommand{\pgr}[1]{{\color{green} \textbf{#1}}}
+
+
+%%%%%%%%%% Работа с картинками %%%%%%%%%
+\usepackage{graphicx}                  % Для вставки рисунков
+\usepackage{graphics}
+\graphicspath{{images/},{imagess/}}    % можно указать папки с картинками
+\usepackage{wrapfig}                   % Обтекание рисунков и таблиц текстом
+
+\usepackage[space]{grffile}
+\usepackage{booktabs}
+
+% These are my colors -- there are many like them, but these ones are mine.
+\definecolor{blue}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,128, 0}
+
+\hypersetup{
+  colorlinks=false,
+  linkbordercolor = {white},
+  linkcolor = {blue}
+}
+
+
+%% I use a beige off white for my background
+\definecolor{MyBackground}{RGB}{255,253,218}
+
+%% Uncomment this if you want to change the background color to something else
+%\setbeamercolor{background canvas}{bg=MyBackground}
+
+%% Change the bg color to adjust your transition slide background color!
+\newenvironment{transitionframe}{
+  \setbeamercolor{background canvas}{bg=yellow}
+  \begin{frame}}{
+    \end{frame}
+}
+
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamercolor{title}{fg=black}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{itemize items}{-}
+\setbeamercolor{itemize item}{fg=blue}
+\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamercolor{enumerate item}{fg=blue}
+\setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{button}{bg=MyBackground,fg=blue,}
+
+
+% If you like road maps, rather than having clutter at the top, have a roadmap show up at the end of each section 
+% (and after your introduction)
+% Uncomment this is if you want the roadmap!
+% \AtBeginSection[]
+% {
+%    \begin{frame}
+%        \frametitle{Roadmap of Talk}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+% }
+\setbeamercolor{section in toc}{fg=blue}
+\setbeamercolor{subsection in toc}{fg=red}
+\setbeamersize{text margin left=1em,text margin right=1em} 
+
+% списки, которые растягиваются на всю величину слайда 
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+
+
+\title[]{\textcolor{blue}{Глубокое обучение и вообще}}
+\author{Ульянкин Филипп и Соловей Влад}
+\date{\today}
+
+\begin{document}
+
+%%% TIKZ STUFF
+\tikzset{   
+        every picture/.style={remember picture,baseline},
+        every node/.style={anchor=base,align=center,outer sep=1.5pt},
+        every path/.style={thick},
+        }
+\newcommand\marktopleft[1]{%
+    \tikz[overlay,remember picture] 
+        \node (marker-#1-a) at (-.3em,.3em) {};%
+}
+\newcommand\markbottomright[2]{%
+    \tikz[overlay,remember picture] 
+        \node (marker-#1-b) at (0em,0em) {};%
+}
+\tikzstyle{every picture}+=[remember picture] 
+\tikzstyle{mybox} =[draw=black, very thick, rectangle, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[draw=black,fill=red, text=white]
+%%%% END TIKZ STUFF
+
+\begin{frame}
+\maketitle
+\centering \textbf{\color{blue} Посиделка 8:}  Object detection
+\end{frame}
+
+\begin{frame}{Agenda} 
+\begin{wideitemize}
+	\item Быстрая история
+	\item YOLO
+	\item Faster-R-CNN
+\end{wideitemize}
+\end{frame}
+
+
+
+ \begin{transitionframe}
+	\begin{center}
+		\Huge  История и метрики
+	\end{center}
+\end{transitionframe}
+
+\begin{frame}{История}
+	Вначале подход был следующим - мы вручную придумываем фичи из картинки, потом каким-либо алгоритмом придумываем как выделить на картинке объект. 
+	
+	Например мы хотим научиться выделять велосипед - нам нужно сначала научиться выделять части велосипеда, потом скользящим окном выделяем область, где больше всего частей было выделено.
+	
+	Такой подход хорош, но он медленный - мы много раз используем один и тот же алгоритм на одной картинке, а это больно.
+	
+	Приход нейронных сетей дал возможность использовать "нейронные знания" об изображении.
+\end{frame}
+
+
+
+\begin{frame}{Метрики}
+Качество детекции определяется следующими метриками :
+\begin{enumerate}
+	\item Bounding box precision - Правильно ли мы подобрали рамочку, не слишком ли она большая/маленькая;
+	\item Recall - Все ли мы объекты нашли?
+	\item Class precision -  Мы нашли то, что надо или нет?
+\end{enumerate}
+
+Еще мы это хотим применять в real time, а для этого нам нужна скорость. Долго скорость была большой проблемой алгоритмов - для реального времени нам надо более 5ти детекций в секунду.
+\end{frame}
+
+\begin{frame}{Метрики}
+
+Но и precision и recall зависят от нашего treshhold, и в точке его считать не очень хорошо. Выход? - посчитаем для каждого уровня отсечения и возьмем площадь под кривой.
+\begin{center}
+\includegraphics[width=.65\linewidth]{precision_recall.jpg}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Метрики}
+	
+Осталось научиться считать правильность наших рамочек. Для этого используется следующая метрика - Jaccard index (IoU).
+
+\begin{equation}
+	IoU = \cfrac{|A \cap B|}{|A \cup B|} = \cfrac{|A \cap B|}{|A|+|B| - |A \cap B|}
+\end{equation}
+
+\begin{center}
+	\includegraphics[width=.5\linewidth]{JI.jpg}
+\end{center}
+
+\end{frame}
+
+
+ \begin{transitionframe}
+	\begin{center}
+		\Huge  YOLO
+	\end{center}
+\end{transitionframe}
+
+
+\begin{frame}{YOLO - начало}
+	Несколько фактов о YOLO:
+	\begin{enumerate}
+		\item YOLO-you only look once
+		\item Самая быстрая архитектура - 170 рамок в секунду на изображении 256 на 256
+		\item Вышла в 2015 году, сейчас уже третья версия из 2018ого
+		\item не самая точная, но быстрая за счет небольшой потери качества.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{YOLO - ограничения}
+	От чего страдает YOLO - плохо работает с мелкими объектами.
+	
+	Как пример - Вам будет тяжело выделить отдельную птицу из стаи. 
+	
+	С этим пытаются бороться, но тяжко. И на краях изображения тоже могут возникнуть проблемы.
+
+\end{frame}
+
+\begin{frame}{YOLO - ключевая идея}
+Перевод задачи в простую задачу регрессии. Для каждой рамки мы должны спрогнозировать следующие параметры : 
+
+	\begin{enumerate}
+	\item Центр рамки
+	\item Ширину и высоту рамки
+	\item Вероятность того, что в рамке лежит объект
+	\item Ну и класс объекта
+\end{enumerate}
+Это все чиселки, мы можем считать по ним регрессию! (но пока не будем)
+\end{frame}
+
+\begin{frame}{YOLO - ключевая идея 2}
+Всю картинку мы покрываем сеткой, из выбираем объекты внутри этой сетки. 
+
+Размер сетки(grid) - наш гиперпараметр. Количество всех возможных рамок - w*h*B(пока оставим за скобками B, тоже наш гиперпараметр)
+
+\begin{center}
+	\includegraphics[width=.4\linewidth]{boxes.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}{YOLO - глубже}
+	Отдельно смотрим на работу, отдельно смотрим на обучение.
+	
+Признаки YOLO обычно берет из других моделей (backbone model). Выбор этой модели влияет на итоговый результат. YOLO берет куб выхода из других моделей.
+
+Итоговая сетка зависит от следующих факторов :
+	\begin{enumerate}
+	\item Насколько сильно снижает размерность модель feature extractor. VGG-16 сжимает в 16 раз (но оставляет 512 каналов)
+	\item Входной размер картинки
+\end{enumerate}
+
+
+\end{frame}
+
+\begin{frame}{YOLO - вход}
+	Отдельно смотрим на работу, отдельно смотрим на обучение - слишком красивые идеи за этим всем стоят.
+	
+	Признаки YOLO обычно берет из других моделей (backbone model). Выбор этой модели влияет на итоговый результат. YOLO берет куб выхода из других моделей.
+	
+	Итоговая сетка зависит от следующих факторов :
+	\begin{enumerate}
+		\item Насколько сильно снижает размерность модель feature extractor. VGG-16 сжимает в 16 раз (но оставляет 512 каналов)
+		\item Входной размер картинки
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{YOLO - выход}
+	Итоговый выход YOLO - w*h*M, где M = B*(C+5).
+		\begin{enumerate}
+		\item С-количество классов, которое у нас всего может быть
+		\item B-количество рамок (как их задавать поговорим позже)
+	\end{enumerate}
+Осталось еще 5 штук:
+\begin{enumerate}
+	\item $t_x$ и $t_y$ - координаты центра рамки
+	\item $t_w$ и $t_h$ - ширина и высота рамки
+	\item $с$ - вероятность того, что у нас в рамке вообще что-то есть
+	\item ну и $p_1$,.....$,P_C$ - вероятности того, что в рамке лежит объекта класса 1,.... С
+\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{YOLO - выход}
+\begin{center}
+	\includegraphics[width=.7\linewidth]{output.jpg}
+\end{center}
+	
+\end{frame}
+
+
+\begin{frame}{YOLO - якорные рамки}
+Наконец-то мы поговорим об этом \textbf{B}. Учить ширину, высоту и координаты центра рамки прям в лоб тяжело, объекты слишком разные по размеру. Поэтому мы вводим понятие - якорная рамка и будем немного корректировать эти рамки под конкретные объекты.
+
+На практике таких рамок обычно от 3 до 25. Обычно используют 9 рамок:
+\begin{enumerate}
+	\item квадратные (Большая, средняя , маленькая)
+	\item верткально-прямоугольные (Большая, средняя , маленькая)
+	\item горизонтально-прямоугольные (Большая, средняя , маленькая)
+\end{enumerate}
+размеры задаются под наш дата сет руками.
+	
+\end{frame} 
+
+\begin{frame}{YOLO - якорные рамки}
+корректировка происходит по след
+	
+\end{frame}
+
+
+\end{document}
+
+
