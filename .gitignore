@@ -1,3 +1,4 @@
+*.h5
 *.aux
 *.fdb_latexmk
 *.fls
